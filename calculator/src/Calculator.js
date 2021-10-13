@@ -3,15 +3,8 @@ import Container from "@material-ui/core/Container"
 import Grid from "@material-ui/core/Grid"
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { styled } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 
-const Item = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  }));
+
 
 const Calculator = ()=> {
     const [ toggle, setToggle] = useState(false);
@@ -36,13 +29,11 @@ const Calculator = ()=> {
         setToggle(true)
 
     }
-    // console.log(payableInterest)
     
     return (
         <Container maxWidth="sm" >
              <h2 style={{marginTop:"10px",fontSize:"25px",fontWeight:"bold",marginLeft:'100px'}}>Loan EMI Calculator</h2>
             <Grid style={{width:"500px"}} sm={9} container direction="column" justifyContent="center" alignItems="center" backgroundColor="#212121">
-           
                 <form >
                     <TextField label ="Amount" style={{marginBottom:'20px',marginLeft:'100px'}}  variant="outlined" value={amount} onChange={(e)=> setAmount(e.target.value)}  />
                     <br />
